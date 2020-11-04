@@ -17,5 +17,5 @@ int main(){
     std::cout << e(0,0,-255,255) <<std::endl; //smallest negative: -65025, a,b > 0  => a=b=0 , c = 9'b111111111, d = 9'b01111111
     std::cout << h(3.875, 7.5) <<std::endl; //largest positive: 290625, f = 11.111 , g = 0111.1
     std::cout << h(3.875, -7.5) <<std::endl; //smallest negative: -29.0625 , f = 11.111, g = 1111.1
-	  std::cout << "0" << h(0.125, 0.5) <<std::endl; //testing the fixed point: smallest decimal part = 0.0625 = 2^(-4)
+    std::cout << "0" << h(0.125, 0.5) <<std::endl; //testing the fixed point: smallest decimal part = 0.0625 = 2^(-4)
 }
