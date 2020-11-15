@@ -12,7 +12,7 @@ typedef ac_channel<dtype> channel;
 
 class RunLengthEncoder{
 	private: 
-		dtype counter = 1;
+		dtype counter;
 		dtype ifcounter;
 		dtype elsecounter;
 		dtype a[n];
@@ -54,15 +54,18 @@ int main(){
     channel in;
 	channel out;
 	dtype a[n];
-	std::srand(std::time(0));	
+	std::srand(std::time(0));
+	for (int i=0;i<10;i++){
 	for(int i=0;i<n;i++) {
 		a[i]=std::rand();
 		in.write(a[i]);
 	};
+	Q.stateRunLengthEncoder();
 	Q.run(in, out);
     std::cout << "input: ";
     for(int i=0; i<10;i++) std::cout<< a[i] << " ";
     std::cout<<std::endl<<"output: ";
     while(out.available(1)) std::cout << out.read() << " ";
     std::cout<<std::endl;
+}
 }
