@@ -63,6 +63,7 @@ int main(){
 	ac_int<W,true> num;
 	ac_int<W,false> x_p;
 	ac_int<W,false> x_m;
+	std::srand(std::time(0));
 	for(int i=0; i<10; i++){
 	num = std::rand();
 	in = std::rand();
