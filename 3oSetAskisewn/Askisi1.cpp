@@ -31,6 +31,7 @@ class RunLengthEncoder{
 	    	ifcounter = 0;
 		}
         void run (channel &in, channel &out) {
+            reset();
         	if(in.available(1)) for(int i=0;i<n;i++) a[i] = in.read();
         	for (int i=0;i<10;i++){
 		if(a[i] == a[i+1]){
@@ -63,7 +64,6 @@ int main(){
 		a[i]=std::rand();
 		in.write(a[i]);
 	};
-	Q.reset();
 	Q.run(in, out);
     std::cout << "input: ";
     for(int i=0; i<10;i++) std::cout<< a[i] << " ";
