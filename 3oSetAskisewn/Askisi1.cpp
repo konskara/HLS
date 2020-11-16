@@ -19,8 +19,11 @@ class RunLengthEncoder{
 		dtype b[n];
 		dtype c[2*n];
     public:
-	    stateRunLengthEncoder() {
-	    	b[n] = 0;
+	    RunLengthEncoder() {
+	    	reset();
+		}
+		void reset(){
+			b[n] = 0;
 	    	a[n] = 0;
 	    	c[2*n]=0;
 	    	counter = 1;
@@ -60,7 +63,7 @@ int main(){
 		a[i]=std::rand();
 		in.write(a[i]);
 	};
-	Q.stateRunLengthEncoder();
+	Q.reset();
 	Q.run(in, out);
     std::cout << "input: ";
     for(int i=0; i<10;i++) std::cout<< a[i] << " ";
