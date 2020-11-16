@@ -15,7 +15,10 @@ class BlackJack {
 		dtype ace;
 		dtype total;
 	public:
-		defaultstate(){
+		BlackJack(){
+			reset();
+		}
+		void reset(){
 			counter = 0;
 			card = 0;
 			ace = 0;
@@ -38,6 +41,7 @@ class BlackJack {
 					win = 0; 
 					end_round = 1;
 				}
+				if (end_round == 1) reset();
 	        }
 	    }
 };
@@ -51,7 +55,6 @@ int main(){
     BlackJack Q;
 	std::srand(std::time(0));
 	for (int i = 0; i<10;i++){
-	Q.defaultstate();
 	win = 0;
 	end_round = 0;
 	while(end_round != 1){ 
